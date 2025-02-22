@@ -13,7 +13,7 @@ public final class Myplugin extends JavaPlugin {
     public void onEnable() {
         // Plugin startup logic
         System.out.println("Myplugin has started");
-        getConfig().options().copyDefaults();
+        //getConfig().options().copyDefaults();
         saveDefaultConfig();
         getCommand("setspawn").setExecutor(new SetSpawnCommand(this));
         getCommand("spawn").setExecutor(new SpawnCommand(this));

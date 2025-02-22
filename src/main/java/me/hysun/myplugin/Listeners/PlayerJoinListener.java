@@ -1,6 +1,7 @@
 package me.hysun.myplugin.Listeners;
 
 import me.hysun.myplugin.Myplugin;
+import org.bukkit.ChatColor;
 import org.bukkit.Location;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
@@ -15,11 +16,14 @@ public class PlayerJoinListener implements Listener {
     }
 
     @EventHandler
-    public void onSpawn(PlayerJoinEvent event){
+    public void onPlayerJoin(PlayerJoinEvent event){
         if(!event.getPlayer().hasPlayedBefore()){
             Location location = plugin.getConfig().getLocation("spawn");
             Player player = event.getPlayer();
-            if(location != null){
+            String joinMessage = plugin.getConfig().getString("join-message");
+            if(location != null && joinMessage != null){
+                joinMessage = joinMessage.replace("%player%", player.getName());
+                player.sendMessage(ChatColor.translateAlternateColorCodes('&', joinMessage));
                 player.teleport(location);
             }
         }
