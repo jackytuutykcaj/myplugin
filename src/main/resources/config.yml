@@ -1,4 +1,4 @@
-join-message: '&aIt is &e%player% &afirst time joining. Welcome to the server!'
+welcome-message: '&aIt is &e%player% &afirst time joining. Welcome to the server!'
 spawn:
   ==: org.bukkit.Location
   world: world
