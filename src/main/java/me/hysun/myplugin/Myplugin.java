@@ -19,6 +19,7 @@ public final class Myplugin extends JavaPlugin {
         getCommand("joinmessage").setExecutor(new JoinMessageCommand(this));
         getCommand("god").setExecutor(new GodCommand(this));
         getCommand("fly").setExecutor(new FlyCommand(this));
+        getCommand("nick").setExecutor(new NickCommand(this));
         getServer().getPluginManager().registerEvents(new PlayerRespawnListener(this), this);
         getServer().getPluginManager().registerEvents(new PlayerJoinListener(this), this);
     }

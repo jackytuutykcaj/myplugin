@@ -15,3 +15,5 @@ commands:
     description: toggle god mode
   fly:
     description: toggle flying
+  nick:
+    description: set nickname
