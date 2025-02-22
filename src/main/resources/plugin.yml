@@ -11,3 +11,7 @@ commands:
     description: teleport to spawn
   joinmessage:
     description: sets the join message
+  god:
+    description: toggle god mode
+  fly:
+    description: toggle flying
