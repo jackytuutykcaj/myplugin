@@ -1,3 +1,5 @@
 me\hysun\myplugin\Commands\SpawnCommand.class
-me\hysun\myplugin\Commands\SetSpawnCommand.class
+me\hysun\myplugin\Listeners\PlayerJoinListener.class
 me\hysun\myplugin\Myplugin.class
+me\hysun\myplugin\Commands\SetSpawnCommand.class
+me\hysun\myplugin\Listeners\PlayerRespawnListener.class

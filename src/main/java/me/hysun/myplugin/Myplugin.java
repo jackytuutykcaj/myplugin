@@ -2,6 +2,8 @@ package me.hysun.myplugin;
 
 import me.hysun.myplugin.Commands.SetSpawnCommand;
 import me.hysun.myplugin.Commands.SpawnCommand;
+import me.hysun.myplugin.Listeners.PlayerJoinListener;
+import me.hysun.myplugin.Listeners.PlayerRespawnListener;
 import org.bukkit.plugin.java.JavaPlugin;
 
 public final class Myplugin extends JavaPlugin {
@@ -15,6 +17,8 @@ public final class Myplugin extends JavaPlugin {
         saveDefaultConfig();
         getCommand("setspawn").setExecutor(new SetSpawnCommand(this));
         getCommand("spawn").setExecutor(new SpawnCommand(this));
+        getServer().getPluginManager().registerEvents(new PlayerRespawnListener(this), this);
+        getServer().getPluginManager().registerEvents(new PlayerJoinListener(this), this);
     }
 
     @Override
