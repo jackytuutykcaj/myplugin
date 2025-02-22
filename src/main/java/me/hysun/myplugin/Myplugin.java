@@ -1,5 +1,6 @@
 package me.hysun.myplugin;
 
+import me.hysun.myplugin.Commands.JoinMessageCommand;
 import me.hysun.myplugin.Commands.SetSpawnCommand;
 import me.hysun.myplugin.Commands.SpawnCommand;
 import me.hysun.myplugin.Listeners.PlayerJoinListener;
@@ -17,6 +18,7 @@ public final class Myplugin extends JavaPlugin {
         saveDefaultConfig();
         getCommand("setspawn").setExecutor(new SetSpawnCommand(this));
         getCommand("spawn").setExecutor(new SpawnCommand(this));
+        getCommand("joinmessage").setExecutor(new JoinMessageCommand(this));
         getServer().getPluginManager().registerEvents(new PlayerRespawnListener(this), this);
         getServer().getPluginManager().registerEvents(new PlayerJoinListener(this), this);
     }

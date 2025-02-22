@@ -9,3 +9,5 @@ commands:
     description: set spawn location
   spawn:
     description: teleport to spawn
+  joinmessage:
+    description: sets the join message

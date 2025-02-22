@@ -20,7 +20,7 @@ public class PlayerJoinListener implements Listener {
         if(!event.getPlayer().hasPlayedBefore()){
             Location location = plugin.getConfig().getLocation("spawn");
             Player player = event.getPlayer();
-            String joinMessage = plugin.getConfig().getString("join-message");
+            String joinMessage = plugin.getConfig().getString("welcome-message");
             if(location != null && joinMessage != null){
                 joinMessage = joinMessage.replace("%player%", player.getName());
                 player.sendMessage(ChatColor.translateAlternateColorCodes('&', joinMessage));
