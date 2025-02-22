@@ -1,0 +1,6 @@
+name: myplugin
+version: '1.0-SNAPSHOT'
+main: me.hysun.myplugin.Myplugin
+api-version: '1.21'
+authors: [ hysun ]
+description: my first plugin
