@@ -18,7 +18,7 @@ public final class Myplugin extends JavaPlugin {
         System.out.println("Myplugin has started");
         //getConfig().options().copyDefaults();
         saveDefaultConfig();
-        Location location = this.getServer().getWorld("world").getSpawnLocation();
+        Location location = this.getServer().getWorlds().get(0).getSpawnLocation();
         if(this.getConfig().getLocation("location") == null){
             System.out.println("No spawn point set in config.");
             System.out.println("Setting one now.");

@@ -3,6 +3,7 @@ package me.hysun.myplugin.Listeners;
 import me.hysun.myplugin.Myplugin;
 import me.hysun.myplugin.Utils.CustomConfig;
 import org.bukkit.ChatColor;
+import org.bukkit.Location;
 import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
@@ -29,8 +30,10 @@ public class PlayerLeaveListener implements Listener {
         SimpleDateFormat format = new SimpleDateFormat("dd-MM-yyyy HH:mm:ss");
         Player player = event.getPlayer();
         UUID player_UUID = player.getUniqueId();
+        Location location = player.getLocation();
         CustomConfig.checkIfFileExists(plugin, player_UUID, plugin.getDataFolder()+"/playerData", player_UUID+".yml");
         CustomConfig.get().set("last-online", format.format(date));
+        CustomConfig.get().set("location", location);
         CustomConfig.save();
         event.setQuitMessage(ChatColor.YELLOW + "~" + player.getDisplayName() + " left the game");
     }

@@ -54,6 +54,9 @@ public class PlayerJoinListener implements Listener {
         player.setDisplayName(CustomConfig.get().getString("nickname"));
         player.setAllowFlight(CustomConfig.get().getBoolean("fly"));
         player.setInvulnerable(CustomConfig.get().getBoolean("god"));
+        if(CustomConfig.get().getLocation("location") != null){
+            player.teleport(CustomConfig.get().getLocation("location"));
+        }
         CustomConfig.get().set("last-login", format.format(date));
         CustomConfig.save();
         event.setJoinMessage(ChatColor.YELLOW + "~" + player.getDisplayName() + " joined the game");
