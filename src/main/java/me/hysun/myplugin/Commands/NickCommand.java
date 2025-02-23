@@ -33,7 +33,7 @@ public class NickCommand implements CommandExecutor {
                 player.sendMessage("Your nickname has been set to " + strings[0]);
             }
             if(strings.length == 2){
-                Player targetPlayer = plugin.getServer().getPlayer(strings[1]);
+                Player targetPlayer = plugin.getServer().getPlayer(strings[0]);
                 UUID target_Player_UUID = targetPlayer.getUniqueId();
                 CustomConfig.checkIfFileExists(plugin, target_Player_UUID, plugin.getDataFolder()+"/playerData", target_Player_UUID+".yml");
                 if(targetPlayer != null){
