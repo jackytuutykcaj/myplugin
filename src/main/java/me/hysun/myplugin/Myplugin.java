@@ -2,7 +2,9 @@ package me.hysun.myplugin;
 
 import me.hysun.myplugin.Commands.*;
 import me.hysun.myplugin.Listeners.PlayerJoinListener;
+import me.hysun.myplugin.Listeners.PlayerLeaveListener;
 import me.hysun.myplugin.Listeners.PlayerRespawnListener;
+import org.bukkit.Location;
 import org.bukkit.plugin.java.JavaPlugin;
 
 import java.io.File;
@@ -16,6 +18,13 @@ public final class Myplugin extends JavaPlugin {
         System.out.println("Myplugin has started");
         //getConfig().options().copyDefaults();
         saveDefaultConfig();
+        Location location = this.getServer().getWorld("world").getSpawnLocation();
+        if(this.getConfig().getLocation("location") == null){
+            System.out.println("No spawn point set in config.");
+            System.out.println("Setting one now.");
+            this.getConfig().set("spawn", location);
+            this.saveConfig();
+        }
         File playerDataFolder = new File(this.getDataFolder(), "playerData");
         if(!playerDataFolder.exists()){
             playerDataFolder.mkdirs();
@@ -28,6 +37,7 @@ public final class Myplugin extends JavaPlugin {
         getCommand("nick").setExecutor(new NickCommand(this));
         getServer().getPluginManager().registerEvents(new PlayerRespawnListener(this), this);
         getServer().getPluginManager().registerEvents(new PlayerJoinListener(this), this);
+        getServer().getPluginManager().registerEvents(new PlayerLeaveListener(this), this);
     }
 
     @Override

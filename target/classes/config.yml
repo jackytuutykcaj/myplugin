@@ -1,9 +1,1 @@
 welcome-message: '&aIt is &e%player% &afirst time joining. Welcome to the server!'
-spawn:
-  ==: org.bukkit.Location
-  world: world
-  x: -186.451728157639
-  y: 77.0
-  z: -147.69999998807907
-  pitch: 31.949965
-  yaw: 116.700195

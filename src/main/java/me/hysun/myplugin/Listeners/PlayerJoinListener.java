@@ -29,6 +29,8 @@ public class PlayerJoinListener implements Listener {
 
     @EventHandler
     public void onPlayerJoin(PlayerJoinEvent event){
+        Date date = new Date();
+        SimpleDateFormat format = new SimpleDateFormat("dd-MM-yyyy HH:mm:ss");
         if(!event.getPlayer().hasPlayedBefore()){
             Location location = plugin.getConfig().getLocation("spawn");
             Player player = event.getPlayer();
@@ -41,13 +43,19 @@ public class PlayerJoinListener implements Listener {
             }
             CustomConfig.checkIfFileExists(plugin, player_UUID, plugin.getDataFolder()+"/playerData", player_UUID+".yml");
             CustomConfig.get().set("nickname", player.getName());
-            CustomConfig.get().set("UUID", player_UUID);
+            CustomConfig.get().set("UUID", player_UUID.toString());
+            CustomConfig.get().set("fly", false);
+            CustomConfig.get().set("god", false);
             CustomConfig.save();
         }
         Player player = event.getPlayer();
         UUID player_UUID = player.getUniqueId();
         CustomConfig.checkIfFileExists(plugin, player_UUID, plugin.getDataFolder()+"/playerData", player_UUID+".yml");
         player.setDisplayName(CustomConfig.get().getString("nickname"));
+        player.setAllowFlight(CustomConfig.get().getBoolean("fly"));
+        player.setInvulnerable(CustomConfig.get().getBoolean("god"));
+        CustomConfig.get().set("last-login", format.format(date));
         CustomConfig.save();
+        event.setJoinMessage(ChatColor.YELLOW + "~" + player.getDisplayName() + " joined the game");
     }
 }
