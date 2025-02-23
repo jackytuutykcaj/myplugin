@@ -20,8 +20,6 @@ import java.util.UUID;
 
 public class PlayerJoinListener implements Listener {
     private final Myplugin plugin;
-    private static File file;
-    private static FileConfiguration customFile;
 
     public PlayerJoinListener(Myplugin plugin) {
         this.plugin = plugin;
@@ -46,6 +44,7 @@ public class PlayerJoinListener implements Listener {
             CustomConfig.get().set("UUID", player_UUID.toString());
             CustomConfig.get().set("fly", false);
             CustomConfig.get().set("god", false);
+            CustomConfig.get().set("vanish", false);
             CustomConfig.save();
         }
         Player player = event.getPlayer();
@@ -57,6 +56,7 @@ public class PlayerJoinListener implements Listener {
         if(CustomConfig.get().getLocation("location") != null){
             player.teleport(CustomConfig.get().getLocation("location"));
         }
+        player.setInvisible(CustomConfig.get().getBoolean("vanish"));
         CustomConfig.get().set("last-login", format.format(date));
         CustomConfig.save();
         event.setJoinMessage(ChatColor.YELLOW + "~" + player.getDisplayName() + " joined the game");

@@ -17,3 +17,5 @@ commands:
     description: toggle flying
   nick:
     description: set nickname
+  vanish:
+    description: toggle invisibility

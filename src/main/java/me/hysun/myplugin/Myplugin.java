@@ -18,8 +18,8 @@ public final class Myplugin extends JavaPlugin {
         System.out.println("Myplugin has started");
         //getConfig().options().copyDefaults();
         saveDefaultConfig();
-        Location location = this.getServer().getWorlds().get(0).getSpawnLocation();
-        if(this.getConfig().getLocation("location") == null){
+        Location location = this.getServer().getWorld("world").getSpawnLocation();
+        if(this.getConfig().getLocation("spawn") == null){
             System.out.println("No spawn point set in config.");
             System.out.println("Setting one now.");
             this.getConfig().set("spawn", location);
@@ -35,6 +35,7 @@ public final class Myplugin extends JavaPlugin {
         getCommand("god").setExecutor(new GodCommand(this));
         getCommand("fly").setExecutor(new FlyCommand(this));
         getCommand("nick").setExecutor(new NickCommand(this));
+        getCommand("vanish").setExecutor(new VanishCommand(this));
         getServer().getPluginManager().registerEvents(new PlayerRespawnListener(this), this);
         getServer().getPluginManager().registerEvents(new PlayerJoinListener(this), this);
         getServer().getPluginManager().registerEvents(new PlayerLeaveListener(this), this);

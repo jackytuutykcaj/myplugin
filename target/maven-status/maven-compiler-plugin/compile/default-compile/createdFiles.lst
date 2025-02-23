@@ -1,5 +1,6 @@
 me\hysun\myplugin\Commands\GodCommand.class
 me\hysun\myplugin\Commands\JoinMessageCommand.class
+me\hysun\myplugin\Commands\VanishCommand.class
 me\hysun\myplugin\Utils\CustomConfig.class
 me\hysun\myplugin\Myplugin.class
 me\hysun\myplugin\Commands\SetSpawnCommand.class
