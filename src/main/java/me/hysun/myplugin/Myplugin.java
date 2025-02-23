@@ -5,6 +5,8 @@ import me.hysun.myplugin.Listeners.PlayerJoinListener;
 import me.hysun.myplugin.Listeners.PlayerRespawnListener;
 import org.bukkit.plugin.java.JavaPlugin;
 
+import java.io.File;
+
 public final class Myplugin extends JavaPlugin {
 
 
@@ -14,6 +16,10 @@ public final class Myplugin extends JavaPlugin {
         System.out.println("Myplugin has started");
         //getConfig().options().copyDefaults();
         saveDefaultConfig();
+        File playerDataFolder = new File(this.getDataFolder(), "playerData");
+        if(!playerDataFolder.exists()){
+            playerDataFolder.mkdirs();
+        }
         getCommand("setspawn").setExecutor(new SetSpawnCommand(this));
         getCommand("spawn").setExecutor(new SpawnCommand(this));
         getCommand("joinmessage").setExecutor(new JoinMessageCommand(this));

@@ -2,6 +2,7 @@ me\hysun\myplugin\Commands\SpawnCommand.class
 me\hysun\myplugin\Commands\GodCommand.class
 me\hysun\myplugin\Commands\JoinMessageCommand.class
 me\hysun\myplugin\Commands\NickCommand.class
+me\hysun\myplugin\Utils\CustomConfig.class
 me\hysun\myplugin\Listeners\PlayerJoinListener.class
 me\hysun\myplugin\Myplugin.class
 me\hysun\myplugin\Commands\FlyCommand.class
