@@ -38,6 +38,7 @@ public final class Myplugin extends JavaPlugin {
         getCommand("vanish").setExecutor(new VanishCommand(this));
         getCommand("sethome").setExecutor(new SetHomeCommand(this));
         getCommand("home").setExecutor(new HomeCommand(this));
+        getCommand("enderchest").setExecutor((new EnderChestCommand()));
         getServer().getPluginManager().registerEvents(new PlayerRespawnListener(this), this);
         getServer().getPluginManager().registerEvents(new PlayerJoinListener(this), this);
         getServer().getPluginManager().registerEvents(new PlayerLeaveListener(this), this);

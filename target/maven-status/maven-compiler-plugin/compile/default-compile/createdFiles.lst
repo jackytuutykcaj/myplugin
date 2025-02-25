@@ -4,6 +4,7 @@ me\hysun\myplugin\Commands\VanishCommand.class
 me\hysun\myplugin\Utils\CustomConfig.class
 me\hysun\myplugin\Myplugin.class
 me\hysun\myplugin\Commands\HomeCommand.class
+me\hysun\myplugin\Commands\EnderChestCommand.class
 me\hysun\myplugin\Commands\SetSpawnCommand.class
 me\hysun\myplugin\Listeners\PlayerRespawnListener.class
 me\hysun\myplugin\Commands\SpawnCommand.class

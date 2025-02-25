@@ -23,3 +23,5 @@ commands:
     description: set home
   home:
     description: teleport to home
+  enderchest:
+    description: opens player enderchest

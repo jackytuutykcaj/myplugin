@@ -9,3 +9,6 @@ commands
 - nick
 - setspawn
 - spawn
+- sethome
+- home
+- enderchest

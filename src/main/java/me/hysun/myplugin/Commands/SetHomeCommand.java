@@ -19,14 +19,16 @@ public class SetHomeCommand implements CommandExecutor {
     @Override
     public boolean onCommand(CommandSender sender, Command command, String s, String[] strings) {
         if(sender instanceof Player) {
-            Player player = (Player) sender;
-            UUID player_UUID = player.getUniqueId();
-            CustomConfig.checkIfFileExists(plugin, player_UUID, plugin.getDataFolder() + "/playerData", player_UUID + ".yml");
-            if (strings.length == 0) {
-                CustomConfig.get().set("sethome.home", player.getLocation());
+            if(strings.length == 0) {
+                Player player = (Player) sender;
+                UUID player_UUID = player.getUniqueId();
+                CustomConfig.checkIfFileExists(plugin, player_UUID, plugin.getDataFolder() + "/playerData", player_UUID + ".yml");
+                if (strings.length == 0) {
+                    CustomConfig.get().set("sethome.home", player.getLocation());
+                }
+                CustomConfig.save();
+                player.sendMessage("Home set!");
             }
-            CustomConfig.save();
-            player.sendMessage("Home set!");
         }
         return true;
     }
