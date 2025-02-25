@@ -3,10 +3,12 @@ me\hysun\myplugin\Commands\JoinMessageCommand.class
 me\hysun\myplugin\Commands\VanishCommand.class
 me\hysun\myplugin\Utils\CustomConfig.class
 me\hysun\myplugin\Myplugin.class
+me\hysun\myplugin\Commands\HomeCommand.class
 me\hysun\myplugin\Commands\SetSpawnCommand.class
 me\hysun\myplugin\Listeners\PlayerRespawnListener.class
 me\hysun\myplugin\Commands\SpawnCommand.class
 me\hysun\myplugin\Listeners\PlayerLeaveListener.class
 me\hysun\myplugin\Commands\NickCommand.class
+me\hysun\myplugin\Commands\SetHomeCommand.class
 me\hysun\myplugin\Listeners\PlayerJoinListener.class
 me\hysun\myplugin\Commands\FlyCommand.class

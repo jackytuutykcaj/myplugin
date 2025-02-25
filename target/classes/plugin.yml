@@ -19,3 +19,7 @@ commands:
     description: set nickname
   vanish:
     description: toggle invisibility
+  sethome:
+    description: set home
+  home:
+    description: teleport to home
