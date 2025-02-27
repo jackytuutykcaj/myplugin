@@ -20,9 +20,9 @@ public class HomeCommand implements CommandExecutor {
     @Override
     public boolean onCommand(CommandSender sender, Command command, String s, String[] strings) {
         if(sender instanceof Player){
+            Player player = (Player) sender;
+            UUID player_UUID = player.getUniqueId();
             if(strings.length == 0) {
-                Player player = (Player) sender;
-                UUID player_UUID = player.getUniqueId();
                 CustomConfig.checkIfFileExists(plugin, player_UUID, plugin.getDataFolder() + "/playerData", player_UUID + ".yml");
                 Location location = CustomConfig.get().getLocation("sethome.home");
                 if (location != null) {
@@ -30,6 +30,16 @@ public class HomeCommand implements CommandExecutor {
                     player.sendMessage("Teleported to home.");
                 }else{
                     player.sendMessage("You have no home set.");
+                }
+            }
+            if(strings.length == 1) {
+                CustomConfig.checkIfFileExists(plugin, player_UUID, plugin.getDataFolder() + "/playerData", player_UUID + ".yml");
+                Location location = CustomConfig.get().getLocation("sethome."+strings[0]);
+                if(location != null){
+                    player.teleport(location);
+                    player.sendMessage("Teleported to home.");
+                }else{
+                    player.sendMessage("This home doesnt exist.");
                 }
             }
         }
