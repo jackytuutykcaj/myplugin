@@ -1,6 +1,7 @@
 package me.hysun.myplugin;
 
 import me.hysun.myplugin.Commands.*;
+import me.hysun.myplugin.Listeners.CookieSlapListener;
 import me.hysun.myplugin.Listeners.PlayerJoinListener;
 import me.hysun.myplugin.Listeners.PlayerLeaveListener;
 import me.hysun.myplugin.Listeners.PlayerRespawnListener;
@@ -41,15 +42,17 @@ public final class Myplugin extends JavaPlugin {
         getCommand("enderchest").setExecutor((new EnderChestCommand()));
         getCommand("inv").setExecutor(new InvCommand(this));
         getCommand("delhome").setExecutor(new DelHomeCommand(this));
+        getCommand("cookieslap").setExecutor(new CookieSlapCommand());
         getServer().getPluginManager().registerEvents(new PlayerRespawnListener(this), this);
         getServer().getPluginManager().registerEvents(new PlayerJoinListener(this), this);
         getServer().getPluginManager().registerEvents(new PlayerLeaveListener(this), this);
+        getServer().getPluginManager().registerEvents(new CookieSlapListener(), this);
     }
 
     @Override
     public void onDisable() {
         // Plugin shutdown logic
-        System.out.println("Myplugin has stoppped");
+        System.out.println("Myplugin has stopped");
     }
 
 }
