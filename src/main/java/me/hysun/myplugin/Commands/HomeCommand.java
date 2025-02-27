@@ -25,8 +25,12 @@ public class HomeCommand implements CommandExecutor {
                 UUID player_UUID = player.getUniqueId();
                 CustomConfig.checkIfFileExists(plugin, player_UUID, plugin.getDataFolder() + "/playerData", player_UUID + ".yml");
                 Location location = CustomConfig.get().getLocation("sethome.home");
-                player.teleport(location);
-                player.sendMessage("Teleported to home.");
+                if (location != null) {
+                    player.teleport(location);
+                    player.sendMessage("Teleported to home.");
+                }else{
+                    player.sendMessage("You have no home set.");
+                }
             }
         }
         return true;

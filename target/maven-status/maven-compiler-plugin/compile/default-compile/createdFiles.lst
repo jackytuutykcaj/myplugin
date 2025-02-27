@@ -9,6 +9,7 @@ me\hysun\myplugin\Commands\SetSpawnCommand.class
 me\hysun\myplugin\Listeners\PlayerRespawnListener.class
 me\hysun\myplugin\Commands\SpawnCommand.class
 me\hysun\myplugin\Listeners\PlayerLeaveListener.class
+me\hysun\myplugin\Commands\InvCommand.class
 me\hysun\myplugin\Commands\NickCommand.class
 me\hysun\myplugin\Commands\SetHomeCommand.class
 me\hysun\myplugin\Listeners\PlayerJoinListener.class
