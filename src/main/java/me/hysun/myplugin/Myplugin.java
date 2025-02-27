@@ -40,6 +40,7 @@ public final class Myplugin extends JavaPlugin {
         getCommand("home").setExecutor(new HomeCommand(this));
         getCommand("enderchest").setExecutor((new EnderChestCommand()));
         getCommand("inv").setExecutor(new InvCommand(this));
+        getCommand("delhome").setExecutor(new DelHomeCommand(this));
         getServer().getPluginManager().registerEvents(new PlayerRespawnListener(this), this);
         getServer().getPluginManager().registerEvents(new PlayerJoinListener(this), this);
         getServer().getPluginManager().registerEvents(new PlayerLeaveListener(this), this);

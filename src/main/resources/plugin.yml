@@ -27,3 +27,5 @@ commands:
     description: opens player enderchest
   inv:
     description: opens player inv
+  delhome:
+    description: deletes a home

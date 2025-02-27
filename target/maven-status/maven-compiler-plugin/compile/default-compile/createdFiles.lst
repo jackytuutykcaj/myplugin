@@ -13,4 +13,5 @@ me\hysun\myplugin\Commands\InvCommand.class
 me\hysun\myplugin\Commands\NickCommand.class
 me\hysun\myplugin\Commands\SetHomeCommand.class
 me\hysun\myplugin\Listeners\PlayerJoinListener.class
+me\hysun\myplugin\Commands\DelHomeCommand.class
 me\hysun\myplugin\Commands\FlyCommand.class
